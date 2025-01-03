@@ -28,35 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            nameLbl = new Label();
             lvlLbl = new Label();
             xpLbl = new Label();
             goldLbl = new Label();
             tnameLbl = new Label();
             complexityLbl = new Label();
-            questLbx = new CheckedListBox();
             statBtn = new Button();
             questBtn = new Button();
             shopBtn = new Button();
             dailyBtn = new Button();
             weeklyBtn = new Button();
-            specialButton = new Button();
+            specialBtn = new Button();
             addBtn = new Button();
+            MainTLP = new TableLayoutPanel();
+            label1 = new Label();
+            label2 = new Label();
+            delBtn = new Button();
+            completeBtn = new Button();
+            MainTLP.SuspendLayout();
             SuspendLayout();
-            // 
-            // nameLbl
-            // 
-            nameLbl.AutoSize = true;
-            nameLbl.Location = new Point(12, 9);
-            nameLbl.Name = "nameLbl";
-            nameLbl.Size = new Size(39, 15);
-            nameLbl.TabIndex = 0;
-            nameLbl.Text = "Name";
             // 
             // lvlLbl
             // 
             lvlLbl.AutoSize = true;
-            lvlLbl.Location = new Point(73, 9);
+            lvlLbl.Location = new Point(13, 9);
             lvlLbl.Name = "lvlLbl";
             lvlLbl.Size = new Size(43, 15);
             lvlLbl.TabIndex = 1;
@@ -65,7 +60,7 @@
             // xpLbl
             // 
             xpLbl.AutoSize = true;
-            xpLbl.Location = new Point(140, 9);
+            xpLbl.Location = new Point(74, 9);
             xpLbl.Name = "xpLbl";
             xpLbl.Size = new Size(52, 15);
             xpLbl.TabIndex = 2;
@@ -92,19 +87,11 @@
             // complexityLbl
             // 
             complexityLbl.AutoSize = true;
-            complexityLbl.Location = new Point(190, 49);
+            complexityLbl.Location = new Point(99, 49);
             complexityLbl.Name = "complexityLbl";
             complexityLbl.Size = new Size(68, 15);
             complexityLbl.TabIndex = 4;
             complexityLbl.Text = "Complexity";
-            // 
-            // questLbx
-            // 
-            questLbx.FormattingEnabled = true;
-            questLbx.Location = new Point(12, 79);
-            questLbx.Name = "questLbx";
-            questLbx.Size = new Size(360, 364);
-            questLbx.TabIndex = 5;
             // 
             // statBtn
             // 
@@ -151,14 +138,14 @@
             weeklyBtn.Text = "Weekly";
             weeklyBtn.UseVisualStyleBackColor = true;
             // 
-            // specialButton
+            // specialBtn
             // 
-            specialButton.Location = new Point(269, 472);
-            specialButton.Name = "specialButton";
-            specialButton.Size = new Size(103, 23);
-            specialButton.TabIndex = 7;
-            specialButton.Text = "Special";
-            specialButton.UseVisualStyleBackColor = true;
+            specialBtn.Location = new Point(269, 472);
+            specialBtn.Name = "specialBtn";
+            specialBtn.Size = new Size(103, 23);
+            specialBtn.TabIndex = 7;
+            specialBtn.Text = "Special";
+            specialBtn.UseVisualStyleBackColor = true;
             // 
             // addBtn
             // 
@@ -169,47 +156,120 @@
             addBtn.Text = "Add quest";
             addBtn.UseVisualStyleBackColor = true;
             // 
+            // MainTLP
+            // 
+            MainTLP.ColumnCount = 4;
+            MainTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            MainTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            MainTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            MainTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            MainTLP.Controls.Add(label1, 0, 0);
+            MainTLP.Controls.Add(label2, 1, 0);
+            MainTLP.Controls.Add(delBtn, 3, 0);
+            MainTLP.Controls.Add(completeBtn, 2, 0);
+            MainTLP.Location = new Point(13, 74);
+            MainTLP.Name = "MainTLP";
+            MainTLP.RowCount = 10;
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            MainTLP.Size = new Size(359, 392);
+            MainTLP.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(83, 39);
+            label1.TabIndex = 0;
+            label1.Text = "nev";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label2.BackColor = Color.Transparent;
+            label2.Location = new Point(92, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 39);
+            label2.TabIndex = 0;
+            label2.Text = "hard";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // delBtn
+            // 
+            delBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            delBtn.Location = new Point(270, 3);
+            delBtn.Name = "delBtn";
+            delBtn.Size = new Size(86, 33);
+            delBtn.TabIndex = 1;
+            delBtn.Text = "Delete";
+            delBtn.UseVisualStyleBackColor = true;
+            // 
+            // completeBtn
+            // 
+            completeBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            completeBtn.Location = new Point(181, 3);
+            completeBtn.Name = "completeBtn";
+            completeBtn.Size = new Size(83, 33);
+            completeBtn.TabIndex = 1;
+            completeBtn.Text = "Complete";
+            completeBtn.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 561);
-            Controls.Add(specialButton);
+            Controls.Add(MainTLP);
+            Controls.Add(specialBtn);
             Controls.Add(weeklyBtn);
             Controls.Add(addBtn);
             Controls.Add(dailyBtn);
             Controls.Add(shopBtn);
             Controls.Add(questBtn);
             Controls.Add(statBtn);
-            Controls.Add(questLbx);
             Controls.Add(complexityLbl);
             Controls.Add(tnameLbl);
             Controls.Add(goldLbl);
             Controls.Add(xpLbl);
             Controls.Add(lvlLbl);
-            Controls.Add(nameLbl);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += FrmMain_Load;
+            MainTLP.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label nameLbl;
         private Label lvlLbl;
         private Label xpLbl;
         private Label goldLbl;
         private Label tnameLbl;
         private Label complexityLbl;
-        private CheckedListBox questLbx;
         private Button statBtn;
         private Button questBtn;
         private Button shopBtn;
         private Button dailyBtn;
         private Button weeklyBtn;
-        private Button specialButton;
+        private Button specialBtn;
         private Button addBtn;
+        private TableLayoutPanel MainTLP;
+        private Label label1;
+        private Label label2;
+        private Button delBtn;
+        private Button completeBtn;
     }
 }
