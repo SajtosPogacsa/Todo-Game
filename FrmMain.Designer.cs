@@ -41,11 +41,6 @@
             specialBtn = new Button();
             addBtn = new Button();
             MainTLP = new TableLayoutPanel();
-            label1 = new Label();
-            label2 = new Label();
-            delBtn = new Button();
-            completeBtn = new Button();
-            MainTLP.SuspendLayout();
             SuspendLayout();
             // 
             // lvlLbl
@@ -163,10 +158,6 @@
             MainTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             MainTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             MainTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            MainTLP.Controls.Add(label1, 0, 0);
-            MainTLP.Controls.Add(label2, 1, 0);
-            MainTLP.Controls.Add(delBtn, 3, 0);
-            MainTLP.Controls.Add(completeBtn, 2, 0);
             MainTLP.Location = new Point(13, 74);
             MainTLP.Name = "MainTLP";
             MainTLP.RowCount = 10;
@@ -182,48 +173,6 @@
             MainTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             MainTLP.Size = new Size(359, 392);
             MainTLP.TabIndex = 8;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.BackColor = Color.Transparent;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(83, 39);
-            label1.TabIndex = 0;
-            label1.Text = "nev";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.BackColor = Color.Transparent;
-            label2.Location = new Point(92, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(83, 39);
-            label2.TabIndex = 0;
-            label2.Text = "hard";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // delBtn
-            // 
-            delBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            delBtn.Location = new Point(270, 3);
-            delBtn.Name = "delBtn";
-            delBtn.Size = new Size(86, 33);
-            delBtn.TabIndex = 1;
-            delBtn.Text = "Delete";
-            delBtn.UseVisualStyleBackColor = true;
-            // 
-            // completeBtn
-            // 
-            completeBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            completeBtn.Location = new Point(181, 3);
-            completeBtn.Name = "completeBtn";
-            completeBtn.Size = new Size(83, 33);
-            completeBtn.TabIndex = 1;
-            completeBtn.Text = "Complete";
-            completeBtn.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
@@ -248,7 +197,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += FrmMain_Load;
-            MainTLP.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -267,9 +215,5 @@
         private Button specialBtn;
         private Button addBtn;
         private TableLayoutPanel MainTLP;
-        private Label label1;
-        private Label label2;
-        private Button delBtn;
-        private Button completeBtn;
     }
 }

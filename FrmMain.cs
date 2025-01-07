@@ -5,6 +5,7 @@ namespace Todo
 {
     public partial class FrmMain : Form
     {
+        User user = new();
         List<Quest> quests = new();
         int id = 0;
 
@@ -15,7 +16,7 @@ namespace Todo
             dailyBtn.Click += TimeBtnClick;
             weeklyBtn.Click += TimeBtnClick;
             specialBtn.Click += TimeBtnClick;
-
+            StatRefresh();
         }
 
         private void TimeBtnClick(object? sender, EventArgs e)
@@ -36,24 +37,45 @@ namespace Todo
                 {
                     Label name = new();
                     name.Text = quest.Name;
-                    name.Tag = quest.Id;
+                    name.Name = quest.Id.ToString();
                     name.TextAlign = ContentAlignment.MiddleCenter;
                     MainTLP.Controls.Add(name);
                     Label comp = new();
                     comp.Text = quest.Complexity;
-                    comp.Tag = quest.Id;
+                    comp.Name = quest.Id.ToString();
                     comp.TextAlign = ContentAlignment.MiddleCenter;
                     MainTLP.Controls.Add(comp);
                     Button complete = new();
                     complete.Text = "Complete";
-                    complete.Tag = quest.Id;
+                    complete.Name = quest.Id.ToString();
+                    complete.Click += CompleteClick;
                     MainTLP.Controls.Add(complete);
                     Button del = new();
                     del.Text = "Delete";
-                    del.Tag = quest.Id;
+                    del.Name = quest.Id.ToString();
+                    del.Click += DelClick;
                     MainTLP.Controls.Add(del);
                 }
             }
+        }
+
+        private void DelClick(object? sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            do
+            {
+                MainTLP.Controls.RemoveByKey(btn.Name);
+            }
+            while (MainTLP.Controls.IndexOfKey(btn.Name) != -1);
+            quests.Remove(quests.Find(x => x.Id.ToString() == btn.Name));
+        }
+
+        private void CompleteClick(object? sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.Enabled = false;
+            quests.Find(x => x.Id.ToString() == btn.Name).Complete(user);
+            StatRefresh();
         }
 
         private void AddBtnClick(object? sender, EventArgs e)
@@ -68,6 +90,13 @@ namespace Todo
                 id += 1;
             }
 
+        }
+
+        private void StatRefresh()
+        {
+            lvlLbl.Text = $"Level {user.Lvl.ToString()}";
+            xpLbl.Text = $"{user.Xp.ToString()}/{user.XpNeeded} XP";
+            goldLbl.Text = $"{user.Money.ToString()}G";
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

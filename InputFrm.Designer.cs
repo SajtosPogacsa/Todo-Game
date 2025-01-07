@@ -73,6 +73,7 @@
             // 
             // compCb
             // 
+            compCb.DropDownStyle = ComboBoxStyle.DropDownList;
             compCb.FormattingEnabled = true;
             compCb.Items.AddRange(new object[] { "Easy", "Medium", "Difficult", "Impossible" });
             compCb.Location = new Point(12, 71);
@@ -92,6 +93,7 @@
             // 
             // timeCb
             // 
+            timeCb.DropDownStyle = ComboBoxStyle.DropDownList;
             timeCb.FormattingEnabled = true;
             timeCb.Items.AddRange(new object[] { "Daily", "Weekly", "Special" });
             timeCb.Location = new Point(12, 115);
