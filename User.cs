@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Todo
 {
-    internal class User
+    public class User
     {
         private int lvl;
         private int xp;
@@ -23,7 +23,7 @@ namespace Todo
             Lvl = lvl;
             Xp = xp;
             Money = money;
-            XpNeededCalc();
+            XpCalc();
         }
 
         public User()
@@ -31,12 +31,17 @@ namespace Todo
             Lvl = 1;
             Xp = 0;
             Money = 0;
-            XpNeededCalc();
+            XpCalc();
         }
 
-        public void XpNeededCalc()
+        public void XpCalc()
         {
-            XpNeeded = (int)(Math.Round((lvl * (100 * Math.Sin(Convert.ToDouble(lvl)))), MidpointRounding.ToEven));
+            XpNeeded = (((lvl *(lvl - 1))/15) * 100) + 100;
+            if (Xp >= XpNeeded)
+            {
+                Lvl += 1;
+                Xp = Xp - XpNeeded;
+            }
         }
     }
 }

@@ -33,9 +33,8 @@
             goldLbl = new Label();
             tnameLbl = new Label();
             complexityLbl = new Label();
-            statBtn = new Button();
+            cardBtn = new Button();
             questBtn = new Button();
-            shopBtn = new Button();
             dailyBtn = new Button();
             weeklyBtn = new Button();
             specialBtn = new Button();
@@ -46,6 +45,7 @@
             // lvlLbl
             // 
             lvlLbl.AutoSize = true;
+            lvlLbl.ForeColor = Color.White;
             lvlLbl.Location = new Point(13, 9);
             lvlLbl.Name = "lvlLbl";
             lvlLbl.Size = new Size(43, 15);
@@ -55,6 +55,7 @@
             // xpLbl
             // 
             xpLbl.AutoSize = true;
+            xpLbl.ForeColor = Color.White;
             xpLbl.Location = new Point(74, 9);
             xpLbl.Name = "xpLbl";
             xpLbl.Size = new Size(52, 15);
@@ -64,6 +65,7 @@
             // goldLbl
             // 
             goldLbl.AutoSize = true;
+            goldLbl.ForeColor = Color.White;
             goldLbl.Location = new Point(297, 9);
             goldLbl.Name = "goldLbl";
             goldLbl.Size = new Size(38, 15);
@@ -73,6 +75,7 @@
             // tnameLbl
             // 
             tnameLbl.AutoSize = true;
+            tnameLbl.ForeColor = Color.White;
             tnameLbl.Location = new Point(13, 49);
             tnameLbl.Name = "tnameLbl";
             tnameLbl.Size = new Size(62, 15);
@@ -82,74 +85,91 @@
             // complexityLbl
             // 
             complexityLbl.AutoSize = true;
+            complexityLbl.ForeColor = Color.White;
             complexityLbl.Location = new Point(99, 49);
             complexityLbl.Name = "complexityLbl";
             complexityLbl.Size = new Size(68, 15);
             complexityLbl.TabIndex = 4;
             complexityLbl.Text = "Complexity";
             // 
-            // statBtn
+            // cardBtn
             // 
-            statBtn.Location = new Point(12, 512);
-            statBtn.Name = "statBtn";
-            statBtn.Size = new Size(100, 40);
-            statBtn.TabIndex = 6;
-            statBtn.Text = "Stats";
-            statBtn.UseVisualStyleBackColor = true;
+            cardBtn.BackColor = Color.DarkGray;
+            cardBtn.FlatAppearance.BorderSize = 0;
+            cardBtn.FlatStyle = FlatStyle.Flat;
+            cardBtn.ForeColor = Color.White;
+            cardBtn.Location = new Point(67, 509);
+            cardBtn.Name = "cardBtn";
+            cardBtn.Size = new Size(100, 40);
+            cardBtn.TabIndex = 6;
+            cardBtn.Text = "Cards";
+            cardBtn.UseVisualStyleBackColor = false;
             // 
             // questBtn
             // 
-            questBtn.Location = new Point(140, 512);
+            questBtn.BackColor = Color.DarkGray;
+            questBtn.FlatAppearance.BorderSize = 0;
+            questBtn.FlatStyle = FlatStyle.Flat;
+            questBtn.ForeColor = Color.White;
+            questBtn.Location = new Point(211, 509);
             questBtn.Name = "questBtn";
             questBtn.Size = new Size(100, 40);
             questBtn.TabIndex = 6;
             questBtn.Text = "Quests";
-            questBtn.UseVisualStyleBackColor = true;
-            // 
-            // shopBtn
-            // 
-            shopBtn.Location = new Point(272, 512);
-            shopBtn.Name = "shopBtn";
-            shopBtn.Size = new Size(100, 40);
-            shopBtn.TabIndex = 6;
-            shopBtn.Text = "Shop";
-            shopBtn.UseVisualStyleBackColor = true;
+            questBtn.UseVisualStyleBackColor = false;
             // 
             // dailyBtn
             // 
+            dailyBtn.BackColor = Color.DarkGray;
+            dailyBtn.FlatAppearance.BorderSize = 0;
+            dailyBtn.FlatStyle = FlatStyle.Flat;
+            dailyBtn.ForeColor = Color.White;
             dailyBtn.Location = new Point(12, 472);
             dailyBtn.Name = "dailyBtn";
             dailyBtn.Size = new Size(103, 23);
             dailyBtn.TabIndex = 7;
             dailyBtn.Text = "Daily";
-            dailyBtn.UseVisualStyleBackColor = true;
+            dailyBtn.UseVisualStyleBackColor = false;
             // 
             // weeklyBtn
             // 
+            weeklyBtn.BackColor = Color.DarkGray;
+            weeklyBtn.FlatAppearance.BorderSize = 0;
+            weeklyBtn.FlatStyle = FlatStyle.Flat;
+            weeklyBtn.ForeColor = Color.White;
             weeklyBtn.Location = new Point(140, 472);
             weeklyBtn.Name = "weeklyBtn";
             weeklyBtn.Size = new Size(103, 23);
             weeklyBtn.TabIndex = 7;
             weeklyBtn.Text = "Weekly";
-            weeklyBtn.UseVisualStyleBackColor = true;
+            weeklyBtn.UseVisualStyleBackColor = false;
             // 
             // specialBtn
             // 
+            specialBtn.BackColor = Color.DarkGray;
+            specialBtn.FlatAppearance.BorderSize = 0;
+            specialBtn.FlatStyle = FlatStyle.Flat;
+            specialBtn.ForeColor = Color.White;
             specialBtn.Location = new Point(269, 472);
             specialBtn.Name = "specialBtn";
             specialBtn.Size = new Size(103, 23);
             specialBtn.TabIndex = 7;
             specialBtn.Text = "Special";
-            specialBtn.UseVisualStyleBackColor = true;
+            specialBtn.UseVisualStyleBackColor = false;
             // 
             // addBtn
             // 
+            addBtn.BackColor = Color.DarkGray;
+            addBtn.FlatAppearance.BorderSize = 0;
+            addBtn.FlatStyle = FlatStyle.Flat;
+            addBtn.ForeColor = Color.White;
             addBtn.Location = new Point(269, 45);
+            addBtn.Margin = new Padding(0);
             addBtn.Name = "addBtn";
             addBtn.Size = new Size(103, 23);
             addBtn.TabIndex = 7;
             addBtn.Text = "Add quest";
-            addBtn.UseVisualStyleBackColor = true;
+            addBtn.UseVisualStyleBackColor = false;
             // 
             // MainTLP
             // 
@@ -178,15 +198,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
             ClientSize = new Size(384, 561);
             Controls.Add(MainTLP);
             Controls.Add(specialBtn);
             Controls.Add(weeklyBtn);
             Controls.Add(addBtn);
             Controls.Add(dailyBtn);
-            Controls.Add(shopBtn);
             Controls.Add(questBtn);
-            Controls.Add(statBtn);
+            Controls.Add(cardBtn);
             Controls.Add(complexityLbl);
             Controls.Add(tnameLbl);
             Controls.Add(goldLbl);
@@ -196,7 +216,6 @@
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Load += FrmMain_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,9 +226,8 @@
         private Label goldLbl;
         private Label tnameLbl;
         private Label complexityLbl;
-        private Button statBtn;
+        private Button cardBtn;
         private Button questBtn;
-        private Button shopBtn;
         private Button dailyBtn;
         private Button weeklyBtn;
         private Button specialBtn;
